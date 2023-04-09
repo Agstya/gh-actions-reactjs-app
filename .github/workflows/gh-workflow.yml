@@ -1,0 +1,13 @@
+#gh-workflow.yml
+
+name: "Github CI/CD Workflow for ReactJS App"
+
+on: [push]
+
+jobs:
+
+  simple_job:
+    name: "Simple Job"
+    steps:
+      - run: echo "Hello, welcome to github actions!"
+      - run: echo "Bye" 

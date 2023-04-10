@@ -1,7 +1,7 @@
 #gh-workflow.yml
 
 name: "Github CI/CD Workflow for ReactJS App"
-
+runs-on: ubuntu-latest
 on: [push]
 
 jobs:

@@ -12,7 +12,7 @@ on:
       environment:
         type: environment
         default: DEV
-        required: true
+        required: false
 
 jobs:
   ubuntu_job:

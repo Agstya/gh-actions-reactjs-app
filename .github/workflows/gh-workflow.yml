@@ -5,9 +5,19 @@ name: "Github CI/CD Workflow for ReactJS App"
 on: [push]
 
 jobs:
-  simple_job:
+  ubuntu_job:
     runs-on: ubuntu-latest
-    name: "Simple Job"
+    name: "ubuntu_job"
     steps:
-      - run: echo "Hello, welcome to github actions!"
-      - run: echo "Bye" 
+      - name: "Print Welcome"
+        run: echo "Hello, welcome to github actions!"
+      - name: "Hostname"
+        run: echo hostname
+      - name: "Date"
+        run: echo date
+      - name: "Config"
+        run: uname -a
+      - name: "python version"
+        run: python3 --version
+      - name: "print bye"
+        run: echo "bye"

@@ -15,19 +15,34 @@ on:
         required: false
 
 jobs:
-  ubuntu_job:
-    runs-on: ubuntu-latest
-    name: "ubuntu_job"
-    steps:
-      - name: "Print Welcome"
-        run: echo "Hello, welcome to github actions!"
-      - name: "Hostname"
-        run: hostname
-      - name: "Date"
-        run: date
-      - name: "Config"
-        run: uname -a
-      - name: "python version"
-        run: python3 --version
-      - name: "print bye"
-        run: echo "bye"
+    ubuntu_job:
+        runs-on: ubuntu-latest
+        name: "ubuntu_job"
+        steps:
+          - name: "Print Welcome"
+            run: echo "Hello, welcome to github actions!"
+          - name: "Hostname"
+            run: hostname
+          - name: "Date"
+            run: date
+          - name: "Config"
+            run: uname -a
+          - name: "python version"
+            run: python3 --version
+          - name: "print bye"
+            run: echo "bye"
+    
+    env_var:
+        runs-on: ubuntu-latest
+        name: "set_env_var"
+        steps:
+          - run: |
+              echo "ENVIRONMENT=$( 
+                if [[ ${{ github.event.inputs.environment }} ]]; then 
+                  echo "${{ github.event.inputs.environment }}"
+                elif [[ ${{ github.ref_name }} == dev ]]; then
+                  echo "DEV"
+                elif [[ ${{ github.ref_name }} == main ]]; then
+                  echo "PROD"
+                fi
+              )" >> $GITHUB_ENV

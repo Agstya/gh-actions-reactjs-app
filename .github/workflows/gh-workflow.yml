@@ -2,7 +2,17 @@
 
 name: "Github CI/CD Workflow for ReactJS App"
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
+      - dev
+  workflow_dispatch:
+    inputs:
+      environment:
+        type: environment
+        default: DEV
+        required: true
 
 jobs:
   ubuntu_job:

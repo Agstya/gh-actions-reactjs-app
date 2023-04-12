@@ -12,9 +12,9 @@ jobs:
       - name: "Print Welcome"
         run: echo "Hello, welcome to github actions!"
       - name: "Hostname"
-        run: echo hostname
+        run: hostname
       - name: "Date"
-        run: echo date
+        run: date
       - name: "Config"
         run: uname -a
       - name: "python version"
